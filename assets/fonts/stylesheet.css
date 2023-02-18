@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Advent Pro';
+    src: url('AdventPro-Regular.eot');
+    src: url('AdventPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('AdventPro-Regular.woff2') format('woff2'),
+        url('AdventPro-Regular.woff') format('woff'),
+        url('AdventPro-Regular.ttf') format('truetype'),
+        url('AdventPro-Regular.svg#AdventPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Baloo 2';
+    src: url('Baloo2-Regular.eot');
+    src: url('Baloo2-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Baloo2-Regular.woff2') format('woff2'),
+        url('Baloo2-Regular.woff') format('woff'),
+        url('Baloo2-Regular.ttf') format('truetype'),
+        url('Baloo2-Regular.svg#Baloo2-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
