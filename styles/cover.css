@@ -94,3 +94,76 @@
     line-height: clamp(56px, calc(56px + (83 - 56) * ((100vw - 360px) / (767 - 360))), 83px);
   }
 }
+
+
+
+/* ///////////////////////////////////////////////
+//           Uso de la fórmula           //
+/////////////////////////////////////////////
+
+  - Descripción
+  La fórmula puede utilizarse para ir de un valor mayor a uno menor y viceversa.
+
+  - Ejemplo:
+  Queremos ir de 320px a 350px desde 1024px a 768px
+
+  - Paso 1: Tener una medida de partida
+
+  .cover-content {
+    max-width: 320px;
+  }
+
+  - Paso 2: En un media query hacer el cálculo 
+  partiendo de la medida del media query (1024) hasta 768px
+
+  @media (max-width: 1024px) {
+    .cover-content {
+      max-width: calc(350px + (320 - 350) * ((100vw - 768px) / (1024 - 768)));
+    }
+  }
+
+  - Paso 3: A 768px habremos llegado a los 350px y limitaremos el cálculo de la fórmula
+
+  @media (max-width: 768px) {
+    max-width: 350px;
+  }
+
+///////  End of Uso de la fórmula  //////// */
+
+
+/* ///////////////////////////////////////////////
+//           Uso de clamp()           //
+/////////////////////////////////////////////
+
+  - Descripción:
+  clamp solo puede utilizarse para ir de un valor mayor a uno menor
+
+  - Ejemplo:
+  Queremos ir de un valor de 500px a 350px desde 1024px a 768px
+
+  - Paso 1: Declarar clamp con la siguiente estructura: 
+  clamp(valor minimo, formula, valor maximo)
+
+  .cover-content {
+    max-width: clamp(350px, calc(350px + (500 - 350) * ((100vw - 768px) / (1024 - 768))), 500px);
+  }
+
+///////  End of Uso de clamp()  //////// */
+
+/*
+  Fórmula clamp: clamp([minimum size]px, calc([minimum size]px + ([maximum size] - [minimum size]) * ((100vw - [minimum-viewport-width]px) / ([maximum-viewport-width] - [minimum-viewport-width]))), [maximum size]px)
+
+  "clamp": {
+		"scope": "css, postcss, scss",
+    "prefix": "clamp",
+		"body": "clamp(${1:[minimum size]}px, calc(${1:[minimum size]}px + (${2:[maximum size]} - ${1:[minimum size]}) * ((100vw - ${3:[minimum viewport width]}px) / (${4:[maximum viewport width]} - ${3:[minimum viewport width]}))), ${2:[maximum size]}px)",
+		"description": ""
+	},
+  "responsive-sizes": {
+    "scope": "css, postcss, scss",
+    "prefix": "responsive size",
+    "body": "calc(${1:[medida final]}px + (${2:[medida inicial]} - ${1:[medida final]}) * ((100vw - ${3:[minimum viewport width]}px) / (${4:[maximum viewport width]} - ${3:[minimum viewport width]})))",
+    "description": "formula for responsive sizes"
+  }
+*/
+
